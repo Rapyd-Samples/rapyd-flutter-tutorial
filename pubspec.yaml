@@ -20,6 +20,7 @@ dependencies:
   dio:
   freezed_annotation:
   json_annotation:
+  crypto:
 
 dev_dependencies:
   flutter_test:
