@@ -21,7 +21,7 @@ MemeResponse _$MemeResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$MemeResponse {
   bool get success => throw _privateConstructorUsedError;
-  List<Meme> get data => throw _privateConstructorUsedError;
+  MemeData get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,9 @@ abstract class $MemeResponseCopyWith<$Res> {
           MemeResponse value, $Res Function(MemeResponse) then) =
       _$MemeResponseCopyWithImpl<$Res, MemeResponse>;
   @useResult
-  $Res call({bool success, List<Meme> data});
+  $Res call({bool success, MemeData data});
+
+  $MemeDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -62,8 +64,16 @@ class _$MemeResponseCopyWithImpl<$Res, $Val extends MemeResponse>
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<Meme>,
+              as MemeData,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MemeDataCopyWith<$Res> get data {
+    return $MemeDataCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value) as $Val);
+    });
   }
 }
 
@@ -75,7 +85,10 @@ abstract class _$$_MemeResponseCopyWith<$Res>
       __$$_MemeResponseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool success, List<Meme> data});
+  $Res call({bool success, MemeData data});
+
+  @override
+  $MemeDataCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -98,9 +111,9 @@ class __$$_MemeResponseCopyWithImpl<$Res>
           : success // ignore: cast_nullable_to_non_nullable
               as bool,
       data: null == data
-          ? _value._data
+          ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<Meme>,
+              as MemeData,
     ));
   }
 }
@@ -108,8 +121,7 @@ class __$$_MemeResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_MemeResponse implements _MemeResponse {
-  _$_MemeResponse({this.success = false, final List<Meme> data = const []})
-      : _data = data;
+  _$_MemeResponse({this.success = false, required this.data});
 
   factory _$_MemeResponse.fromJson(Map<String, dynamic> json) =>
       _$$_MemeResponseFromJson(json);
@@ -117,14 +129,8 @@ class _$_MemeResponse implements _MemeResponse {
   @override
   @JsonKey()
   final bool success;
-  final List<Meme> _data;
   @override
-  @JsonKey()
-  List<Meme> get data {
-    if (_data is EqualUnmodifiableListView) return _data;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_data);
-  }
+  final MemeData data;
 
   @override
   String toString() {
@@ -137,13 +143,12 @@ class _$_MemeResponse implements _MemeResponse {
         (other.runtimeType == runtimeType &&
             other is _$_MemeResponse &&
             (identical(other.success, success) || other.success == success) &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, success, const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(runtimeType, success, data);
 
   @JsonKey(ignore: true)
   @override
@@ -160,7 +165,7 @@ class _$_MemeResponse implements _MemeResponse {
 }
 
 abstract class _MemeResponse implements MemeResponse {
-  factory _MemeResponse({final bool success, final List<Meme> data}) =
+  factory _MemeResponse({final bool success, required final MemeData data}) =
       _$_MemeResponse;
 
   factory _MemeResponse.fromJson(Map<String, dynamic> json) =
@@ -169,10 +174,150 @@ abstract class _MemeResponse implements MemeResponse {
   @override
   bool get success;
   @override
-  List<Meme> get data;
+  MemeData get data;
   @override
   @JsonKey(ignore: true)
   _$$_MemeResponseCopyWith<_$_MemeResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+MemeData _$MemeDataFromJson(Map<String, dynamic> json) {
+  return _MemeData.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MemeData {
+  List<Meme> get memes => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MemeDataCopyWith<MemeData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MemeDataCopyWith<$Res> {
+  factory $MemeDataCopyWith(MemeData value, $Res Function(MemeData) then) =
+      _$MemeDataCopyWithImpl<$Res, MemeData>;
+  @useResult
+  $Res call({List<Meme> memes});
+}
+
+/// @nodoc
+class _$MemeDataCopyWithImpl<$Res, $Val extends MemeData>
+    implements $MemeDataCopyWith<$Res> {
+  _$MemeDataCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? memes = null,
+  }) {
+    return _then(_value.copyWith(
+      memes: null == memes
+          ? _value.memes
+          : memes // ignore: cast_nullable_to_non_nullable
+              as List<Meme>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_MemeDataCopyWith<$Res> implements $MemeDataCopyWith<$Res> {
+  factory _$$_MemeDataCopyWith(
+          _$_MemeData value, $Res Function(_$_MemeData) then) =
+      __$$_MemeDataCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<Meme> memes});
+}
+
+/// @nodoc
+class __$$_MemeDataCopyWithImpl<$Res>
+    extends _$MemeDataCopyWithImpl<$Res, _$_MemeData>
+    implements _$$_MemeDataCopyWith<$Res> {
+  __$$_MemeDataCopyWithImpl(
+      _$_MemeData _value, $Res Function(_$_MemeData) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? memes = null,
+  }) {
+    return _then(_$_MemeData(
+      memes: null == memes
+          ? _value._memes
+          : memes // ignore: cast_nullable_to_non_nullable
+              as List<Meme>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_MemeData implements _MemeData {
+  _$_MemeData({final List<Meme> memes = const []}) : _memes = memes;
+
+  factory _$_MemeData.fromJson(Map<String, dynamic> json) =>
+      _$$_MemeDataFromJson(json);
+
+  final List<Meme> _memes;
+  @override
+  @JsonKey()
+  List<Meme> get memes {
+    if (_memes is EqualUnmodifiableListView) return _memes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_memes);
+  }
+
+  @override
+  String toString() {
+    return 'MemeData(memes: $memes)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MemeData &&
+            const DeepCollectionEquality().equals(other._memes, _memes));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_memes));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MemeDataCopyWith<_$_MemeData> get copyWith =>
+      __$$_MemeDataCopyWithImpl<_$_MemeData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_MemeDataToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MemeData implements MemeData {
+  factory _MemeData({final List<Meme> memes}) = _$_MemeData;
+
+  factory _MemeData.fromJson(Map<String, dynamic> json) = _$_MemeData.fromJson;
+
+  @override
+  List<Meme> get memes;
+  @override
+  @JsonKey(ignore: true)
+  _$$_MemeDataCopyWith<_$_MemeData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

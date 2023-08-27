@@ -9,16 +9,25 @@ part of 'app_models.dart';
 _$_MemeResponse _$$_MemeResponseFromJson(Map<String, dynamic> json) =>
     _$_MemeResponse(
       success: json['success'] as bool? ?? false,
-      data: (json['data'] as List<dynamic>?)
-              ?.map((e) => Meme.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
+      data: MemeData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_MemeResponseToJson(_$_MemeResponse instance) =>
     <String, dynamic>{
       'success': instance.success,
       'data': instance.data,
+    };
+
+_$_MemeData _$$_MemeDataFromJson(Map<String, dynamic> json) => _$_MemeData(
+      memes: (json['memes'] as List<dynamic>?)
+              ?.map((e) => Meme.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$_MemeDataToJson(_$_MemeData instance) =>
+    <String, dynamic>{
+      'memes': instance.memes,
     };
 
 _$_Meme _$$_MemeFromJson(Map<String, dynamic> json) => _$_Meme(

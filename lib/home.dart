@@ -4,7 +4,6 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:rapyd/network/network_connection.dart';
 import 'package:rapyd/select_plan_screen.dart';
-
 import 'models/app_models.dart';
 
 class HomeScreen extends StatefulWidget {

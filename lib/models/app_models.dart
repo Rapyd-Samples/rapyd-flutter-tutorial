@@ -7,11 +7,21 @@ part 'app_models.g.dart';
 class MemeResponse with _$MemeResponse {
   factory MemeResponse({
     @Default(false) bool success,
-    @Default([]) List<Meme> data,
+    required MemeData data,
+   
   }) = _MemeResponse;
 
   factory MemeResponse.fromJson(Map<String, dynamic> json) =>
       _$MemeResponseFromJson(json);
+}
+
+@freezed
+class MemeData with _$MemeData {
+  factory MemeData({
+     @Default([]) List<Meme> memes,
+  }) = _MemeData;
+
+  factory MemeData.fromJson(Map<String, dynamic> json) => _$MemeDataFromJson(json);
 }
 
 @freezed

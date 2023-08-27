@@ -21,7 +21,7 @@ class NetworkConnection {
   Future<List<Meme>> getMemePosts() async {
     try {
       Response response = await dio.get('/get_memes');
-      return MemeResponse.fromJson(response.data).data;
+      return MemeResponse.fromJson(response.data).data.memes;
     } on DioException catch (e) {
       print(e.message);
     } on SocketException catch (e) {
