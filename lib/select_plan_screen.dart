@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rapyd/hosted_checkout_screen.dart';
 import 'package:rapyd/payment_method_screen.dart';
-
 import 'models/app_models.dart';
 
 class SelectPlanScreen extends StatefulWidget {

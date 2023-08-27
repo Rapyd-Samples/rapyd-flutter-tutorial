@@ -6,17 +6,14 @@ import 'package:rapyd/models/app_models.dart';
 import 'package:rapyd/network/rapyd_connection.dart';
 
 class NetworkConnection {
-  late final Dio dio;
-  late final RapydConnection rapyd;
-  final baseOptions = BaseOptions(
+  final Dio dio = Dio(BaseOptions(
+    baseUrl: 'https://api.imgflip.com',
     connectTimeout: const Duration(seconds: 30),
     receiveTimeout: const Duration(seconds: 30),
-  );
-  NetworkConnection() {
-    dio = Dio(baseOptions);
-    rapyd = RapydConnection(dio);
-    dio.options.baseUrl = 'https://api.imgflip.com';
-  }
+  ));
+  final RapydConnection rapyd = RapydConnection();
+
+  NetworkConnection();
 
   Future<List<Meme>> getMemePosts() async {
     try {
