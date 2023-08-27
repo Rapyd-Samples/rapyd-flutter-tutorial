@@ -21,6 +21,8 @@ dependencies:
   freezed_annotation:
   json_annotation:
   crypto:
+  flutter_credit_card: ^3.0.6
+  webview_flutter: ^4.2.3
 
 dev_dependencies:
   flutter_test:
