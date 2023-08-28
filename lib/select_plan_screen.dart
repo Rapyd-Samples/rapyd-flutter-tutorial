@@ -54,6 +54,7 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
         ),
         DropdownButtonFormField<Country>(
             value: selectedCountry,
+            isExpanded: true,
             items: countries
                 .map((e) =>
                     DropdownMenuItem<Country>(value: e, child: Text(e.name)))
@@ -63,6 +64,13 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
             }),
         const SizedBox(
           height: 10,
+        ),
+        const Text(
+          'Provide a name to use the Hosted Checkout method otherwise leave it blank to use the Subscriptions API method',
+          style: TextStyle(color: Colors.red),
+        ),
+        const SizedBox(
+          height: 5,
         ),
         TextFormField(
           controller: nameController,
@@ -93,6 +101,8 @@ class _SelectPlanScreenState extends State<SelectPlanScreen> {
         Center(
           child: ElevatedButton.icon(
               onPressed: () {
+                // If the name is not empty, use the Hosted Checkout method to subscribe the user
+                // otherwise use the Subscriptions API method
                 if (nameController.text.isNotEmpty) {
                   Navigator.push(
                       context,

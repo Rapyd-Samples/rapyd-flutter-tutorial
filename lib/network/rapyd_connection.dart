@@ -10,10 +10,8 @@ class RapydConnection {
     receiveTimeout: const Duration(seconds: 30),
   ));
   final String baseUrl = 'https://sandboxapi.rapyd.net';
-  final String secretKey =
-      'rsk_032fa643ee6d5a8949e4a5f5506ef3b11379564f64a29daffc33f1552082cf1d9e8bba39229bd891'; // Never transmit the secret key by itself.
-  final String accessKey =
-      'rak_97FE0621E29FC1CD03A1'; // The access key received from Rapyd.
+  final String secretKey = ''; // The secret key received from Rapyd.
+  final String accessKey = ''; // The access key received from Rapyd.
   RapydConnection() {
     dio.options.baseUrl = baseUrl;
   }

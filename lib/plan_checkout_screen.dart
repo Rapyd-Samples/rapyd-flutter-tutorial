@@ -85,6 +85,7 @@ class _PlanCheckoutScreenState extends State<PlanCheckoutScreen> {
                       name: name,
                       paymentMethod: {
                         "type": paymentMethod.type,
+                        "name": name,
                         "fields": {
                           "number": cardNo.replaceAll(' ', ''),
                           "expiration_month": expiry.split('/').first,

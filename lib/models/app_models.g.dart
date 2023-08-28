@@ -277,7 +277,7 @@ _$_Plan _$$_PlanFromJson(Map<String, dynamic> json) => _$_Plan(
       id: json['id'] as String,
       amount: json['amount'] as int,
       billingScheme: json['billing_scheme'] as String?,
-      currency: json['currency'] as String,
+      currency: json['currency'] as String?,
       interval: json['interval'] as String?,
       intervalCount: json['interval_count'] as int?,
       product: json['product'] == null

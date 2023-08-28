@@ -200,7 +200,7 @@ class Plan with _$Plan {
     required String id,
     required int amount,
     @JsonKey(name: 'billing_scheme') String? billingScheme,
-    required String currency,
+    String? currency,
     required String? interval,
     @JsonKey(name: 'interval_count') int? intervalCount,
     required Product? product,

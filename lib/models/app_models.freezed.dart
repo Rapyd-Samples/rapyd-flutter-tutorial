@@ -3373,7 +3373,7 @@ mixin _$Plan {
   int get amount => throw _privateConstructorUsedError;
   @JsonKey(name: 'billing_scheme')
   String? get billingScheme => throw _privateConstructorUsedError;
-  String get currency => throw _privateConstructorUsedError;
+  String? get currency => throw _privateConstructorUsedError;
   String? get interval => throw _privateConstructorUsedError;
   @JsonKey(name: 'interval_count')
   int? get intervalCount => throw _privateConstructorUsedError;
@@ -3401,7 +3401,7 @@ abstract class $PlanCopyWith<$Res> {
       {String id,
       int amount,
       @JsonKey(name: 'billing_scheme') String? billingScheme,
-      String currency,
+      String? currency,
       String? interval,
       @JsonKey(name: 'interval_count') int? intervalCount,
       Product? product,
@@ -3430,7 +3430,7 @@ class _$PlanCopyWithImpl<$Res, $Val extends Plan>
     Object? id = null,
     Object? amount = null,
     Object? billingScheme = freezed,
-    Object? currency = null,
+    Object? currency = freezed,
     Object? interval = freezed,
     Object? intervalCount = freezed,
     Object? product = freezed,
@@ -3453,10 +3453,10 @@ class _$PlanCopyWithImpl<$Res, $Val extends Plan>
           ? _value.billingScheme
           : billingScheme // ignore: cast_nullable_to_non_nullable
               as String?,
-      currency: null == currency
+      currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       interval: freezed == interval
           ? _value.interval
           : interval // ignore: cast_nullable_to_non_nullable
@@ -3515,7 +3515,7 @@ abstract class _$$_PlanCopyWith<$Res> implements $PlanCopyWith<$Res> {
       {String id,
       int amount,
       @JsonKey(name: 'billing_scheme') String? billingScheme,
-      String currency,
+      String? currency,
       String? interval,
       @JsonKey(name: 'interval_count') int? intervalCount,
       Product? product,
@@ -3541,7 +3541,7 @@ class __$$_PlanCopyWithImpl<$Res> extends _$PlanCopyWithImpl<$Res, _$_Plan>
     Object? id = null,
     Object? amount = null,
     Object? billingScheme = freezed,
-    Object? currency = null,
+    Object? currency = freezed,
     Object? interval = freezed,
     Object? intervalCount = freezed,
     Object? product = freezed,
@@ -3564,10 +3564,10 @@ class __$$_PlanCopyWithImpl<$Res> extends _$PlanCopyWithImpl<$Res, _$_Plan>
           ? _value.billingScheme
           : billingScheme // ignore: cast_nullable_to_non_nullable
               as String?,
-      currency: null == currency
+      currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       interval: freezed == interval
           ? _value.interval
           : interval // ignore: cast_nullable_to_non_nullable
@@ -3611,7 +3611,7 @@ class _$_Plan implements _Plan {
       {required this.id,
       required this.amount,
       @JsonKey(name: 'billing_scheme') this.billingScheme,
-      required this.currency,
+      this.currency,
       required this.interval,
       @JsonKey(name: 'interval_count') this.intervalCount,
       required this.product,
@@ -3632,7 +3632,7 @@ class _$_Plan implements _Plan {
   @JsonKey(name: 'billing_scheme')
   final String? billingScheme;
   @override
-  final String currency;
+  final String? currency;
   @override
   final String? interval;
   @override
@@ -3730,7 +3730,7 @@ abstract class _Plan implements Plan {
       {required final String id,
       required final int amount,
       @JsonKey(name: 'billing_scheme') final String? billingScheme,
-      required final String currency,
+      final String? currency,
       required final String? interval,
       @JsonKey(name: 'interval_count') final int? intervalCount,
       required final Product? product,
@@ -3750,7 +3750,7 @@ abstract class _Plan implements Plan {
   @JsonKey(name: 'billing_scheme')
   String? get billingScheme;
   @override
-  String get currency;
+  String? get currency;
   @override
   String? get interval;
   @override
