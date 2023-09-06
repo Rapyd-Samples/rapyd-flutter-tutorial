@@ -32,6 +32,8 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     var paymethods = await NetworkConnection().getCountryPaymentMethods(
         countryCode: selectedCountry.isoAlpha2,
         currency: selectedCountry.currencyCode);
+        
+    // Filter unsupported and non-card payment methods
     paymentMethods.addAll(paymethods
         .where((element) => element.category == 'card')
         .where((element) => element.supportsSubscription));

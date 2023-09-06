@@ -25,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     showModalBottomSheet(
       barrierColor: Colors.transparent,
       isScrollControlled: true,
+      useSafeArea: true,
       elevation: 5,
       context: context,
       builder: (ctx) => Container(
@@ -53,7 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     refresh();
     loadSubscriptionPlans();
-    
   }
 
   Future refresh() async {
