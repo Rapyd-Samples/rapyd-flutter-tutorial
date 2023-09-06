@@ -53,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     refresh();
     loadSubscriptionPlans();
+    
   }
 
   Future refresh() async {
