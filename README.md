@@ -1,4 +1,4 @@
-# Subscription Billing Using Flutter and the Rapys API 
+# Subscription Billing Using Flutter and the Rapyd API 
 In this tutorial, you will learn how to build a Flutter application that allows for setting up subscription billing using Rapyd.
 
 ## What do you need to start
